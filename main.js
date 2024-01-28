@@ -5,7 +5,7 @@ var points = 0;
 var hand = [];
 
 var roomInput;
-var nameInput;
+var playerInput;
 var introContainer;
 var rulesContainer;
 var cardsContainer;
@@ -18,7 +18,6 @@ var navigationContainer;
 
 function onclick_drawThree() {
 	drawThree();
-
 }
 
 function onclick_navigation_Rules() {
@@ -44,17 +43,13 @@ function onclick_Join() {
 }
 
 function navigate_to_play() {
+	roomOffset = parseInt(roomInput.value);
+	playerOffset = parseInt(playerInput.value);
 	return navigate("play") + navigateTo("room", roomOffset) + navigateTo("player", playerOffset);
 }
 
 function navigate(value) {
 	return navigateTo("nav", value);
-}
-
-function joinRoom() {
-	roomOffset = parseInt(roomInput.target.value);
-	nameOffset = parseInt(nameInput.target.value);
-	drawThree();
 }
 
 function drawThree() {
@@ -72,7 +67,6 @@ function pickCard(type) {
 	var cardIndex = indexWithOffset(parseInt(roomOffset) + parseInt(playerOffset), cardsOfType.length);
 	console.log("cardIndex");
 	console.log(cardIndex);
-
 	var card = cardsOfType[cardIndex];
 	return card;
 }
@@ -99,32 +93,24 @@ function RenderCard(container, card) {
 }
 
 function RenderHand() {
-console.log(hand);
+	console.log(hand);
 	RenderCard(card_1_Container, hand[0]);
 	RenderCard(card_2_Container, hand[1]);
 	RenderCard(card_3_Container, hand[2]);
 }
 
-function navigateTo(key, value) {
+function navigateTo(key, value, first) {
 	key = encodeURIComponent(key);
 	value = encodeURIComponent(value);
 
-	var kvp = document.location.search.substring(1).split('&');
-	let i = 0;
+	if (first) {
 
-	for (; i < kvp.length; i++) {
-		if (kvp[i].startsWith(key + '=')) {
-			let pair = kvp[i].split('=');
-			pair[1] = value;
-			kvp[i] = pair.join('=');
-			break;
-		}
+		return "?" + key + "=" + value;
 	}
+	else {
+		return "&" + key + "=" + value;
 
-	if (i >= kvp.length) {
-		kvp[kvp.length] = [key, value].join('=');
 	}
-	return kvp.join('&');
 }
 
 function createCard(name, imgUrl, type, description) {
@@ -140,7 +126,8 @@ function createCard(name, imgUrl, type, description) {
 
 (function init() {
 	roomInput = document.getElementById("room-input");
-	nameInput = document.getElementById("name-input");
+	playerInput = document.getElementById("player-input");
+
 	introContainer = document.getElementById("intro-container");
 	rulesContainer = document.getElementById("rules-container");
 	cardsContainer = document.getElementById("cards-container");
@@ -189,8 +176,8 @@ function createCard(name, imgUrl, type, description) {
 
 	let nav = params.nav;
 	if (nav == "play") {
-		roomOffset = params.room;
-		playerOffset = params.player;
+		roomOffset = parseInt(params.room);
+		playerOffset = parseInt(params.player);
 		introContainer.style.display = 'none';
 		///cardsContainer.style.display = 'none';
 		rulesContainer.style.display = 'none';

@@ -1,7 +1,13 @@
+body{
+	font-family: sans-serif;
+}
 #intro-container{
 }
 
-#rules-container{
+#points-container, h1{
+	font-size: 20pt;
+	text-align: center;
+	margin: 20px;
 }
 
 #cards-container{
@@ -11,15 +17,35 @@
 
 }
 
-#card-1-container
+.card-container
 {
-
+	display: block;
+	padding:10px;
+	margin: 10px;
+	margin-left:auto;
+	margin-right: auto;
+	border-radius: 5px;
+	width:100%;
+	max-width: 600px;
+	border:1px solid #5b5b5b;
+	box-shadow: 10px 0px 9px #000000aa;
 }
-#card-2-container
-{
 
+img {
+	display: block;
+	margin: 10px;
+	margin-left:auto;
+	margin-right: auto;
 }
-#card-3-container
-{
 
+
+button, input{
+	display: block;
+	padding:10px;
+	margin: 10px;
+	margin-left:auto;
+	margin-right: auto;
+	border-radius: 5px;
+	width:100%;
+	max-width: 400px;;
 }

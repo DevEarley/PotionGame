@@ -8,12 +8,14 @@
 </head>
 <body>
 	<div id="navigation-container">
+	<img src="00.png"/>
+	<h1> Curses & Cure </h1>
 		<button onclick="onclick_navigation_Rules()">Rules</button>
 		<button onclick="onclick_navigation_Play()">Play</button>
 	</div>
 	<div id="intro-container">
-		<input type="number" placeholder="ROOM NUMBER" />
-		<input type="number" placeholder="PLAYER NUMBER" />
+		<input id="room-input" type="number" placeholder="ROOM NUMBER" />
+		<input id="player-input" type="number" placeholder="PLAYER NUMBER" />
 		<button onclick="onclick_Join()">Join</button>
 	</div>
 	<div id="rules-container">
@@ -29,13 +31,13 @@
 		<div id="points-container">
 		POINTS:	0
 		</div>
-		<div id="card-1-container">
+		<div id="card-1-container" class="card-container">
 			Empty
 		</div>
-		<div id="card-2-container">
+		<div id="card-2-container" class="card-container">
 			Empty
 		</div>
-		<div id="card-3-container">
+		<div id="card-3-container" class="card-container">
 			Empty
 		</div>
 	</div>
