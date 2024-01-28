@@ -14,12 +14,36 @@
 		<button onclick="onclick_navigation_Play()">Play</button>
 	</div>
 	<div id="intro-container">
-		<input id="room-input" type="number" placeholder="ROOM NUMBER" />
-		<input id="player-input" type="number" placeholder="PLAYER NUMBER" />
+		<input id="room-input" type="number" placeholder="ROOM NUMBER" value="0"/>
+		<input id="player-input" type="number" placeholder="PLAYER NUMBER"  value="0"/>
 		<button onclick="onclick_Join()">Join</button>
 	</div>
 	<div id="rules-container">
-		RULES - Ask Alex.
+		<h1>Rules</h1>
+		<div id="rules-card-container" class="card-container">
+			<h2>Basics</h2>
+			- Players start with 1 card of each type.
+			- You must follow the rules on each card.
+
+			<h2>Geting Points</h2>
+			- When a player is cured, their cards are now up for grabs and are worth 1 point each.
+			- Only when the player is cured, each player has a chance for guessing.
+			- The player that triggered the cure gets to guess first.
+			- When the player guesses correctly, they hold the discarded card as a point. (It's effect is not in play.)
+			- The game is over once everyone is cured or bored.
+			
+			<h2>Using a D20 to play</h2>
+			- Players take turns rolling a D20.
+			- If they roll lower than 15, they may make a statement or ask a question to try to get other players to cure them. Then they pass the dice.
+			- If they roll 15 or more, they can say or ask up to 3 things.  Then they pass the dice.
+			
+			<h2>Using a timer.</h2>
+			- Set the timer for 60 seconds. 
+			- Any player can speak or ask a question during this time. 
+			- If a player is cured, reset the timer for 60 seconds.
+			- If no players were cured after the timer finises, set the timer for another 60 seconds. 
+			- During this time, all players are cured and players try to guess. 
+		</div>
 	</div>
 	<div id="cards-container">
 		<div id="cards-buttons-container">

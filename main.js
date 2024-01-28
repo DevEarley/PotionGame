@@ -43,6 +43,7 @@ function onclick_Join() {
 }
 
 function navigate_to_play() {
+
 	roomOffset = parseInt(roomInput.value);
 	playerOffset = parseInt(playerInput.value);
 	return navigate("play") + navigateTo("room", roomOffset) + navigateTo("player", playerOffset);
