@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="style.css">
+	<title>Potion Game</title>
+</head>
+<body>
+	<div id="navigation-container">
+		<button onclick="onclick_navigation_Rules()">Rules</button>
+		<button onclick="onclick_navigation_Play()">Play</button>
+	</div>
+	<div id="intro-container">
+		<input type="number" placeholder="ROOM NUMBER" />
+		<input type="number" placeholder="PLAYER NUMBER" />
+		<button onclick="onclick_Join()">Join</button>
+	</div>
+	<div id="rules-container">
+		RULES - Ask Alex.
+	</div>
+	<div id="cards-container">
+		<div id="cards-buttons-container">
+			<button onclick="onclick_drawThree()">Draw 3</button>
+			<!-- <button onclick="onclick_addThreeToQueue()">Add 3 to queue</button> -->
+			<button onclick="onclick_addPoint()">Add Point</button>
+			<button onclick="onclick_removePoint()">Remove Point</button>
+		</div>
+		<div id="points-container">
+		POINTS:	0
+		</div>
+		<div id="card-1-container">
+			Empty
+		</div>
+		<div id="card-2-container">
+			Empty
+		</div>
+		<div id="card-3-container">
+			Empty
+		</div>
+	</div>
+	<script src="./main.js"></script>
+</body>
+</html>
