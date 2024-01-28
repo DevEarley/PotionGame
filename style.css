@@ -25,7 +25,8 @@ body{
 	margin-left:auto;
 	margin-right: auto;
 	border-radius: 5px;
-	width:100%;
+
+	width:calc(100% - 20px);
 	max-width: 600px;
 	border:1px solid #5b5b5b;
 	box-shadow: 10px 0px 9px #000000aa;
@@ -46,6 +47,6 @@ button, input{
 	margin-left:auto;
 	margin-right: auto;
 	border-radius: 5px;
-	width:calc(100% - 20px);
+	width:calc(100% - 40px);
 	max-width: 400px;;
 }

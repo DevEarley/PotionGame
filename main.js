@@ -44,8 +44,19 @@ function onclick_Join() {
 
 function navigate_to_play() {
 
-	roomOffset = parseInt(roomInput.value);
-	playerOffset = parseInt(playerInput.value);
+	if (isNaN(parseInt(roomInput.value))) {
+		roomOffset = 0;
+	}
+	else {
+		roomOffset = parseInt(roomInput.value);
+	}
+	if ( isNaN(parseInt(playerInput.value))) {
+		playerOffset = 0;
+	}
+	else {
+		playerOffset = parseInt(playerInput.value);
+	}
+
 	return navigate("play") + navigateTo("room", roomOffset) + navigateTo("player", playerOffset);
 }
 
