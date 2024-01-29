@@ -40,7 +40,7 @@ img {
 }
 
 
-button, input{
+button, input, label{
 	display: block;
 	padding:10px;
 	margin: 10px;

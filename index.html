@@ -1,21 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="style.css">
 	<title>Potion Game</title>
 </head>
+
 <body>
 	<div id="navigation-container">
-	<img src="00.png"/>
-	<h1> Curses & Cure </h1>
+		<img src="00.png" />
+		<h1> Curses & Cure </h1>
 		<button onclick="onclick_navigation_Rules()">Rules</button>
 		<button onclick="onclick_navigation_Play()">Play</button>
 	</div>
 	<div id="intro-container">
-		<input id="room-input" type="number" placeholder="ROOM NUMBER" value="0"/>
-		<input id="player-input" type="number" placeholder="PLAYER NUMBER"  value="0"/>
+		<label for="room-input">Room Number</label>
+		<input id="room-input" type="number" placeholder="ROOM NUMBER" value="0" />
+		<label for="player-input">Player Number</label>
+		<input id="player-input" type="number" placeholder="PLAYER NUMBER" value="0" />
 		<button onclick="onclick_Join()">Join</button>
 	</div>
 	<div id="rules-container">
@@ -31,29 +35,29 @@
 			- The player that triggered the cure gets to guess first.
 			- When the player guesses correctly, they hold the discarded card as a point. (It's effect is not in play.)
 			- The game is over once everyone is cured or bored.
-			
+
 			<h2>Using a D20 to play</h2>
 			- Players take turns rolling a D20.
-			- If they roll lower than 15, they may make a statement or ask a question to try to get other players to cure them. Then they pass the dice.
-			- If they roll 15 or more, they can say or ask up to 3 things.  Then they pass the dice.
-			
+			- If they roll lower than 15, they may make a statement or ask a question to try to get other players to
+			cure them. Then they pass the dice.
+			- If they roll 15 or more, they can say or ask up to 3 things. Then they pass the dice.
+
 			<h2>Using a timer.</h2>
-			- Set the timer for 60 seconds. 
-			- Any player can speak or ask a question during this time. 
+			- Set the timer for 60 seconds.
+			- Any player can speak or ask a question during this time.
 			- If a player is cured, reset the timer for 60 seconds.
-			- If no players were cured after the timer finises, set the timer for another 60 seconds. 
-			- During this time, all players are cured and players try to guess. 
+			- If no players were cured after the timer finises, set the timer for another 60 seconds.
+			- During this time, all players are cured and players try to guess.
 		</div>
 	</div>
 	<div id="cards-container">
 		<div id="cards-buttons-container">
-			<button onclick="onclick_drawThree()">Draw 3</button>
 			<!-- <button onclick="onclick_addThreeToQueue()">Add 3 to queue</button> -->
 			<button onclick="onclick_addPoint()">Add Point</button>
 			<button onclick="onclick_removePoint()">Remove Point</button>
 		</div>
 		<div id="points-container">
-		POINTS:	0
+			POINTS: 0
 		</div>
 		<div id="card-1-container" class="card-container">
 			Empty
@@ -67,4 +71,5 @@
 	</div>
 	<script src="./main.js"></script>
 </body>
+
 </html>
