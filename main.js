@@ -50,7 +50,7 @@ function navigate_to_play() {
 	else {
 		roomOffset = parseInt(roomInput.value);
 	}
-	if ( isNaN(parseInt(playerInput.value))) {
+	if (isNaN(parseInt(playerInput.value))) {
 		playerOffset = 0;
 	}
 	else {
@@ -75,18 +75,30 @@ function drawThree() {
 function pickCard(type) {
 	var cardsOfType = cards.filter(c => c.type == type);
 	console.log("cardsOfType");
-	console.log(cardsOfType);
-	var cardIndex = indexWithOffset(parseInt(roomOffset) + parseInt(playerOffset), cardsOfType.length);
+	var offsetID = 0;
+	if (parseInt(roomOffset) > 0) {
+		offsetID = getRandomIndex(cardsOfType.length);
+	}
+	else {
+		offsetID = parseInt(roomOffset) + parseInt(playerOffset);
+	}
+	console.log(offsetID);
+	var cardIndex = indexWithOffset(offsetID, cardsOfType.length);
 	console.log("cardIndex");
 	console.log(cardIndex);
 	var card = cardsOfType[cardIndex];
 	return card;
 }
 
+function getRandomIndex(arrayLength) {
+	return parseInt(Math.random() * arrayLength) % arrayLength;
+
+}
 function indexWithOffset(offset, arrayLength) {
 	var index = 0;
-	if (offset > arrayLength) {
-		index = arrayLength % offset;
+	if (offset >= arrayLength) {
+		offset += parseInt(Math.random() * arrayLength)
+		index = offset % arrayLength;
 	}
 	else {
 		index = offset;
